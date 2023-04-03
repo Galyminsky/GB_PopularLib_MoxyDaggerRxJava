@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import coil.load
 import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.databinding.FragmentProfileBinding
-import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.domain.UserEntity
+import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.domain.GithubUser
 
 @Suppress("DEPRECATION")
 class ProfileFragment : Fragment() {
@@ -25,17 +25,17 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val user = arguments?.getParcelable<UserEntity>("USER")
+        val user = arguments?.getParcelable<GithubUser>("USER")
         if (user != null) renderData(user)
 
     }
 
     @SuppressLint("SetTextI18n")
-    private fun renderData(user: UserEntity) {
+    private fun renderData(githubUser: GithubUser) {
         with(binding) {
-            ivUserAvatar.load(user.avatarUrl)
-            tvUserId.text = "ID: ${user.id}"
-            tvUserLogin.text = "Login: ${user.login}"
+            ivUserAvatar.load(githubUser.avatarUrl)
+            tvUserId.text = "ID: ${githubUser.id}"
+            tvUserLogin.text = "Login: ${githubUser.login}"
         }
     }
 

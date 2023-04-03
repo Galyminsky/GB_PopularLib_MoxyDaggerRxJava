@@ -18,15 +18,20 @@
         android:id="@+id/tv_user_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/akaya_telivigala"
         android:padding="@dimen/small_padding_8"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_user_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/akaya_telivigala"
         android:padding="@dimen/small_padding_8"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold" />
 

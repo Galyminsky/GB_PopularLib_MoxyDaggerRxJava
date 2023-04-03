@@ -6,4 +6,9 @@
     <string name="id">ID:</string>
     <string name="login">LOGIN:</string>
     <string name="get">GET</string>
+
+    <string name="first_counter">Counter 1</string>
+    <string name="second_counter">Counter 2</string>
+    <string name="third_counter">Counter 3</string>
+    <string name="github_users">List of GitHub users</string>
 </resources>

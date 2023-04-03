@@ -3,11 +3,11 @@ package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.ui.users
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.domain.UserEntity
+import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.domain.GithubUser
 
 class UsersAdapter() : RecyclerView.Adapter<UsersViewHolder>() {
-    private val data = mutableListOf<UserEntity>()
-    var listener: ((UserEntity) -> Unit)? = null
+    private val data = mutableListOf<GithubUser>()
+    var listener: ((GithubUser) -> Unit)? = null
 
     init {
         setHasStableIds(true)
@@ -26,7 +26,7 @@ class UsersAdapter() : RecyclerView.Adapter<UsersViewHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(users: List<UserEntity>) {
+    fun setData(users: List<GithubUser>) {
         data.clear()
         data.addAll(users)
         notifyDataSetChanged()
