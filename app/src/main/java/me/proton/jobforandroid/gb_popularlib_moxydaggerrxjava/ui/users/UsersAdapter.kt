@@ -1,4 +1,4 @@
-package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.ui.main
+package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.ui.users
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
@@ -7,6 +7,7 @@ import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.domain.UserEntity
 
 class UsersAdapter() : RecyclerView.Adapter<UsersViewHolder>() {
     private val data = mutableListOf<UserEntity>()
+    var listener: ((UserEntity) -> Unit)? = null
 
     init {
         setHasStableIds(true)
@@ -21,7 +22,7 @@ class UsersAdapter() : RecyclerView.Adapter<UsersViewHolder>() {
     override fun getItemCount() = data.size
 
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(data[position], listener)
     }
 
     @SuppressLint("NotifyDataSetChanged")

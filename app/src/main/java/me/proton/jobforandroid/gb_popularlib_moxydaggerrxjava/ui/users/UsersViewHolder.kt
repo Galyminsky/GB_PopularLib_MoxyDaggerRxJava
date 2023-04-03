@@ -1,4 +1,4 @@
-package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.ui.main
+package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.ui.users
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,8 +14,11 @@ class UsersViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
 ) {
     private val binding = ItemUsersBinding.bind(itemView)
 
-    fun bind(userEntity: UserEntity) {
+    fun bind(userEntity: UserEntity, listener: ((UserEntity) -> Unit)?) {
         with(binding) {
+            userItem.setOnClickListener {
+                listener?.invoke(userEntity)
+            }
             tvUserId.text = userEntity.id.toString()
             tvUserLogin.text = userEntity.login
             ivUserAvatar.load(userEntity.avatarUrl) {

@@ -3,7 +3,7 @@ package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.R
-import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.ui.main.MainFragment
+import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.ui.users.MainFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
