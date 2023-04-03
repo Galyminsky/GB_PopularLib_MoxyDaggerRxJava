@@ -7,14 +7,14 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.R
 import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.databinding.ItemUsersBinding
-import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.domain.UserEntity
+import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.domain.GithubUser
 
 class UsersViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(R.layout.item_users, parent, false)
 ) {
     private val binding = ItemUsersBinding.bind(itemView)
 
-    fun bind(userEntity: UserEntity, listener: ((UserEntity) -> Unit)?) {
+    fun bind(userEntity: GithubUser, listener: ((GithubUser) -> Unit)?) {
         with(binding) {
             userItem.setOnClickListener {
                 listener?.invoke(userEntity)
@@ -23,7 +23,6 @@ class UsersViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
             tvUserLogin.text = userEntity.login
             ivUserAvatar.load(userEntity.avatarUrl) {
                 crossfade(true)
-                placeholder(R.drawable.placeholder)
                 transformations(RoundedCornersTransformation(16f))
             }
         }
