@@ -11,4 +11,12 @@
     <string name="second_counter">Counter 2</string>
     <string name="third_counter">Counter 3</string>
     <string name="github_users">List of GitHub users</string>
+
+    <string name="cancel">Отмена</string>
+    <string name="select_image">Выберите изображение</string>
+    <string name="converter_title">Конвертация</string>
+    <string-array name="attachment_type">
+        <item>Gallery</item>
+        <item>Camera</item>
+    </string-array>
 </resources>
