@@ -5,6 +5,11 @@ plugins {
     id 'kotlin-parcelize'
 }
 
+project.ext {
+    GITHUB_USER_NAME = System.getenv("GITHUB_USER_NAME") ?: "<not-set>"
+    GITHUB_USER_PASS = System.getenv("GITHUB_USER_PASS") ?: "<not-set>"
+}
+
 android {
     namespace 'me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava'
     compileSdk 33
@@ -20,6 +25,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField('String', 'GITHUB_USER_NAME', "\"$GITHUB_USER_NAME\"")
+            buildConfigField('String', 'GITHUB_USER_PASS', "\"$GITHUB_USER_PASS\"")
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -53,6 +62,7 @@ dependencies {
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 
     //RxJava
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
@@ -68,6 +78,14 @@ dependencies {
     implementation "com.github.moxy-community:moxy-androidx:2.2.2"
     implementation "com.github.moxy-community:moxy-android:2.2.2"
     kapt "com.github.moxy-community:moxy-compiler:2.2.2"
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    //OKHTTP3
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+
+
 
     implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.5.0-beta01'
 

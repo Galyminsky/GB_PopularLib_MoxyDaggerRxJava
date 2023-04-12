@@ -1,0 +1,5 @@
+package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.presenter
+
+import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.view.UserItemView
+
+interface IUserListPresenter : IListPresenter<UserItemView>
