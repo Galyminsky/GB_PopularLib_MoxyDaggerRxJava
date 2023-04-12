@@ -7,7 +7,7 @@ plugins {
 
 project.ext {
     GITHUB_USER_NAME = System.getenv("GITHUB_USER_NAME") ?: "<not-set>"
-    GITHUB_USER_PASS = System.getenv("GITHUB_USER_PASS") ?: "<not-set>"
+    GITHUB_USER_PASSWORD = System.getenv("GITHUB_USER_PASSWORD") ?: "<not-set>"
 }
 
 android {
@@ -27,7 +27,7 @@ android {
     buildTypes {
         debug {
             buildConfigField('String', 'GITHUB_USER_NAME', "\"$GITHUB_USER_NAME\"")
-            buildConfigField('String', 'GITHUB_USER_PASS', "\"$GITHUB_USER_PASS\"")
+            buildConfigField('String', 'GITHUB_USER_PASSWORD', "\"$GITHUB_USER_PASSWORD\"")
         }
         release {
             minifyEnabled false
@@ -56,37 +56,39 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    //Coil
-    implementation 'io.coil-kt:coil:2.1.0'
-
-    //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
-
-    //RxJava
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
-    implementation 'io.reactivex.rxjava3:rxjava:3.1.6'
-    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'
+    //Moxy
+    implementation "com.github.moxy-community:moxy:2.2.2"
+    kapt "com.github.moxy-community:moxy-compiler:2.2.2"
+    implementation "com.github.moxy-community:moxy-ktx:2.2.2"
+    implementation "com.github.moxy-community:moxy-androidx:2.2.2"
 
     //Cicerone
     implementation 'com.github.terrakok:cicerone:7.1'
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.4.7'
 
-    //Moxy
-    implementation "com.github.moxy-community:moxy:2.2.2"
-    implementation "com.github.moxy-community:moxy-ktx:2.2.2"
-    implementation "com.github.moxy-community:moxy-androidx:2.2.2"
-    implementation "com.github.moxy-community:moxy-android:2.2.2"
-    kapt "com.github.moxy-community:moxy-compiler:2.2.2"
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:2.2.21"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
 
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation "com.github.bumptech.glide:glide:4.11.0"
+    kapt "com.github.bumptech.glide:compiler:4.11.0"
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.12.0@aar"
 
-    //OKHTTP3
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+    //Retrofit
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
 
-
-
-    implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.5.0-beta01'
+    //Room
+    kapt "androidx.room:room-compiler:2.2.5"
+    implementation "androidx.room:room-runtime:2.2.5"
+    implementation "androidx.room:room-ktx:2.2.5"
+    implementation "androidx.room:room-rxjava2:2.2.5"
 
 }
