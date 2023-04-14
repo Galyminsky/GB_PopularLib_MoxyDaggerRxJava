@@ -110,7 +110,7 @@ class ImageCompressorFragment : BaseDaggerFragment(), ImageCompressorView, BackB
         binding.imageSavedId.setImageURI(uri)
     }
 
-    fun showException(throwable: Throwable) {
+    override fun showException(throwable: Throwable) {
         context?.showToast(throwable.message)
     }
 

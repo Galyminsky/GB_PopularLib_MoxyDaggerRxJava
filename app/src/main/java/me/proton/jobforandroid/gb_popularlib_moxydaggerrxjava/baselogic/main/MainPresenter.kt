@@ -1,5 +1,6 @@
 package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.baselogic.main
 
+import android.annotation.SuppressLint
 import android.util.Log
 import com.github.terrakok.cicerone.Router
 import io.reactivex.rxjava3.core.Observable
@@ -15,6 +16,7 @@ class MainPresenter(router: Router) : BasePresenter<MainView>(router) {
         router.newRootScreen(UsersScreen())
     }
 
+    @SuppressLint("CheckResult")
     fun execExampleMap() {
         Observable.fromIterable(listOf("1", "2", "3", "4", "5"))
             .switchMap {
