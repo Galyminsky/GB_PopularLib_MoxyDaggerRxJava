@@ -17,7 +17,6 @@ class App : DaggerApplication() {
             .builder()
             .apply {
                 withContext(applicationContext)
-
                 val cicerone = Cicerone.create()
                 withNavigationHolder(cicerone.getNavigatorHolder())
                 withRouter(cicerone.router)
