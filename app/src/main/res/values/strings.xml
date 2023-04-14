@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">GB_PopularLib_MoxyDaggerRxJava</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_refresh">Обновить</string>
+
+    <string name="id">ID:</string>
+    <string name="login">LOGIN:</string>
+    <string name="get">GET</string>
+
+    <string name="first_counter">Counter 1</string>
+    <string name="second_counter">Counter 2</string>
+    <string name="third_counter">Counter 3</string>
+    <string name="github_users">List of GitHub users</string>
+
+    <string name="cancel">Отмена</string>
+    <string name="select_image">Выберите изображение</string>
+    <string name="converter_title">Конвертация</string>
+    <string-array name="attachment_type">
+        <item>Gallery</item>
+        <item>Camera</item>
+    </string-array>
+
+    <string name="button_select_image">Выбрать картинку</string>
+    <string name="button_save_image">Сохранить картинку</string>
+    <string name="button_cancel_image">Отмена</string>
+    <string name="image_compressor_title">Качество изображения: %1$d%% от исходного</string>
+    <string name="image_size_title">Размеры сторон: %1$d%% от исходного</string>
+
+    <string name="permission">Разрешить</string>
+    <string name="no_permission">Нет прав на запись</string>
+    <string name="no_permission_ok">Выберите изображение</string>
+    <string name="message_from_permission">Необходимы права на запись!</string>
 </resources>

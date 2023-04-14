@@ -1,0 +1,5 @@
+package me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.baselogic.users
+
+import me.proton.jobforandroid.gb_popularlib_moxydaggerrxjava.baselogic.ListPresenter
+
+interface UsersListPresenter : ListPresenter<UserItemView>
